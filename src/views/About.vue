@@ -1,5 +1,12 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    about
   </div>
 </template>
+
+<script lang='typescript'>
+export default {
+  name: 'About'
+
+}
+</script>
