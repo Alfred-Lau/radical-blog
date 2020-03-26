@@ -4,7 +4,12 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+import log from '@/scripts/plugin'
 import './common/index.scss'
+
+Vue.use(log, {
+  name: 'welcome'
+})
 
 Vue.config.productionTip = false
 

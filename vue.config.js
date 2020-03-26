@@ -1,5 +1,5 @@
 module.exports = {
   chainWebpack (api) {
-    console.log('api', api)
+    console.log('api')
   }
 }

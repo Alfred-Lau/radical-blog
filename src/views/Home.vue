@@ -7,7 +7,12 @@
     </section>
     <section class="block main">
       <div class="main-container">
+        <button @click="show = !show">切换我</button>
+
         中心放我的原创文章
+        <transition name="fade">
+          <span v-show="show" style="display:block;">请控制我的显示</span>
+        </transition>
       </div>
     </section>
     <section class="block right">
@@ -20,9 +25,19 @@
 
 <script>
 // @ is an alias to /src
+import { log } from '@/scripts/mixin'
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  mixins: [log],
+  mounted () {
+    this.log('我真的可以调用')
+  },
+  data () {
+    return {
+      show: false
+    }
+  }
 }
 </script>
 
@@ -54,6 +69,13 @@ $bgcolor: #ddd;
         background: #fff;
         margin: 10px;
         padding: 20px;
+
+        .fade-enter-active, .fade-leave-active {
+          transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+          opacity: 0;
+        }
     }
   }
 
