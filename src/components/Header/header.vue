@@ -1,5 +1,5 @@
 <template>
-  <div class='header'>
+  <div :class='{header : true, fixed : isFixed}' >
     <h3 class="header-title">
       <a href="">十年挑灯看剑</a>
       <div class="menu-wrapper">
@@ -23,13 +23,34 @@ export default {
   },
   data () {
     return {
-      query: ''
+      query: '',
+      isFixed: false
     }
+  },
+  mounted () {
+    // 需要添加防抖
+    window.addEventListener('scroll', () => {
+      // 滚动 距离上部 Header 组件高度的时候 fixed
+      const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+      if (top > 50) {
+        this.isFixed = true
+      } else {
+        this.isFixed = false
+      }
+    })
   }
+
 }
 </script>
 
 <style lang='scss'>
+
+.fixed {
+  position: fixed;
+  top: 0;
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+  // transition: top 1s;
+}
 
 .header {
   width: 100%;
