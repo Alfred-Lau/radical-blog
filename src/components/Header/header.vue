@@ -6,6 +6,10 @@
         <Menu></Menu>
       </div>
     </h3>
+
+    <div class="search">
+      <input type="search" v-model="query" class="search-box">搜我
+    </div>
   </div>
 </template>
 
@@ -16,6 +20,11 @@ export default {
   name: 'Header',
   components: {
     Menu
+  },
+  data () {
+    return {
+      query: ''
+    }
   }
 }
 </script>
@@ -36,6 +45,28 @@ export default {
     .menu-wrapper {
       display: inline-block;
       margin-left: 100px;
+    }
+  }
+
+  .search {
+    height: 120px;
+    float: right;
+    margin-right: 40px;
+    &-box {
+      width: 220px;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 10px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #eee;
+      padding: 0 5px;
+
+      transition: width .8s, border-color .8s;
+      &:focus{
+        width: 400px;
+        border-color: #ccc;
+      }
     }
   }
 }
