@@ -139,7 +139,7 @@ export default {
 
   // 生命周期
   mounted () {
-    this.log('我真的可以调用')
+    // this.log('我真的可以调用')
   }
 
 }
