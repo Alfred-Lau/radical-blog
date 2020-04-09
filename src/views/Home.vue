@@ -8,60 +8,34 @@
     <section class="block main">
       <div class="main-container">
         <Slider></Slider>
-        <button @click="show = !show">切换我</button>
-
-        中心放我的原创文章
-        <!-- TODO： mode="out-in"  in-out 模式不是经常用到，但对于一些稍微不同的过渡效果还是有用的 -->
-        <transition name="fade">
-          <span v-show="show" style="display:block;">请控制我的显示</span>
-        </transition>
-
-        <!-- 实现一个 放大-缩小 动画效果 使用动画库的话，需要使用 自定义过渡类名-->
-        <button @click="showp = !showp">切换我预览段落</button>
-        <section style="overflow:hidden;">
-          <transition name="p">
-            <p v-show="showp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem commodi repellendus sequi, laboriosam, esse iusto recusandae nemo dignissimos hic cupiditate quam ducimus ratione! Magni, accusamus? Minima veritatis cumque itaque!</p>
-          </transition>
-        </section>
-
-        <!-- js hooks -->
-        <section style="js-hooks">
-          <button @click="showa = !showa">
-            Toggle Animation!
-          </button>
-          <transition
-            v-on:before-enter="beforeEnter"
-            v-on:enter="enter"
-            v-on:leave="leave"
-            v-bind:css="false"
-          >
-            <p v-if="showa">
-              Demo
-            </p>
-          </transition>
-        </section>
-
-        <!-- 多个组件的 过渡 -->
-
-        <div><input type="radio" value="A" name="comp" @change="view = 'x-a'"/>A<input type="radio" value="B" name='comp' @change="view = 'x-b'"/>B</div>
-        <section class="multi-comp">
-          <component :is="view"></component>
-        </section>
 
         <!-- 列表的进入离开 过渡 -->
-        <button @click="shuffle"> 猜你喜欢 </button>
         <transition-group tag="ul" class="articles" name="list">
           <li v-for="article in articles" :key="article.id" class="article">
             <div class="card">
+              <h3 class="card-title">
                 {{article.title}}
+              </h3>
+              <p class="card-info">
+                <span class="nick-name">{{article.author}}</span>
+                <span class="created-time">{{article.time | formated}}</span>
+              </p>
+              <p class="card-desc">{{article.desc}}</p>
+              <ul class="card-tags">
+                <li class="card-tag" v-for="item in article.tags" :key="item">{{item}}</li>
+              </ul>
             </div>
           </li>
         </transition-group>
       </div>
     </section>
     <section class="block right">
-       <div class="right-container">
+      <h3 class="title">
         我是右侧影响力 block
+      </h3>
+       <div class="right-container">
+        <section class="original-articles">最近输出文章</section>
+        <section class="original-projects">最近研究项目</section>
       </div>
     </section>
   </div>
@@ -80,13 +54,17 @@ export default {
   // 其他
   name: 'Home',
   components: {
-    Slider,
+    Slider
     /* You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build. */
-    'x-a': { render: h => { return h('div', {}, 'a') } },
-    'x-b': { render: h => { return h('div', {}, 'b') } }
+    // 'x-b': { render: h => { return h('div', {}, 'b') } }
     // 'x-a': (h) => h(<div>comp A</div>),
     // 'x-b': (h) => h(<div>comp B</div>)
 
+  },
+  filters: {
+    formated (val) {
+      return val
+    }
   },
   // 数据
   data () {
@@ -97,14 +75,14 @@ export default {
       showa: false,
       items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
       articles: [
-        { title: '这个地方是列表', id: 0 },
-        { title: '这个地方是列表', id: 1 },
-        { title: '这个地方是列表', id: 2 },
-        { title: '这个地方是列表', id: 3 },
-        { title: '这个地方是列表', id: 4 },
-        { title: '这个地方是列表', id: 5 },
-        { title: '这个地方是列表', id: 6 },
-        { title: '这个地方是列表', id: 7 }
+        { title: '这个地方是列表', id: 0, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 1, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 2, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 3, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 4, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 5, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 6, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] },
+        { title: '这个地方是列表', id: 7, author: 'zhazhahui', time: new Date().getTime(), desc: '我是描述，不一样的描述', tags: ['前端', '运维', '工程化', '产品'] }
       ]
     }
   },
@@ -146,7 +124,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bgcolor: #ddd;
+$bgcolor: #f0f2f5;
 
 .home {
   background: $bgcolor;
@@ -169,10 +147,10 @@ $bgcolor: #ddd;
 
   .main {
     flex: 2;
+    background: #F0F2F5;
     &-container {
-      background: #fff;
-      margin: 10px;
-      padding: 20px;
+      margin:  10px 0 10px 0;
+      padding:  0 0 10px 0;
 
       // 定义 CSS变形 transition 和 CSS动画 animation 的时机
 
@@ -220,10 +198,42 @@ $bgcolor: #ddd;
         .article {
           background: #fff;
           margin: 10px 0;
-          padding: 10px;
-          border: 1px solid #eeeeaa;
+          padding: 24px 32px;
+          outline: none;
+          text-align: left;
+          .card {
+            &-title {
+              font-size: 21px;
+              color: rgba($color: #000000, $alpha: .85);
+            }
 
-          height: 80px;
+            &-info {
+              font-size: 13px;
+              color: rgba($color: #000000, $alpha: .65);
+            }
+
+            &-desc {
+              margin: 14px 0;
+              font-size: 16px;
+              color: rgba($color: #000000, $alpha: .65);
+            }
+
+            &-tags {
+              text-decoration: none;
+              list-style: none;
+              display: flex;
+              .card-tag {
+                background: #fafafa;
+                color: rgba($color: #000000, $alpha: .65);
+                margin: 0 7px 0 0;
+                padding: 0 8px;
+                font-size: 12px;
+                border-radius: 4px;
+                border: 1px solid #d9d9d9;
+              }
+            }
+          }
+
         }
       }
     }
@@ -231,10 +241,15 @@ $bgcolor: #ddd;
 
   .right {
     flex:1;
+    background: #fff;
+    margin: 10px;
+    padding: 20px;
     &-container {
-      background: #fff;
-      margin: 10px;
-      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      .original-articles, .original-projects {
+        min-height: 200px;
+      }
     }
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">我是底部</footer>
+  <footer class="footer">十年挑灯看剑</footer>
 </template>
 
 <script>
