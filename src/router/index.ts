@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Work from '../views/Work.vue'
 import Life from '../views/Life.vue'
+import Css from '../views/Css.vue'
 
 Vue.use(VueRouter)
 
@@ -15,7 +16,12 @@ const routes = [
   {
     path: '/piecework',
     name: 'Work',
-    component: Work
+    component: Work,
+    children: [{
+      path: 'css',
+      name: 'css',
+      component: Css
+    }]
   },
   {
     path: '/meaning',

@@ -49,6 +49,7 @@ export default {
   position: fixed;
   top: 0;
   box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+  z-index: 10;
   // transition: top 1s;
 }
 
