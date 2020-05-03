@@ -3,7 +3,7 @@
     <section class="block left">
       <div class="left-container">
         <p class="ask">你想问什么,万一有回复呢</p>
-        <input type="text" name="question" id="question">
+        <input type="text" name="question" id="question" />
       </div>
     </section>
     <section class="block main">
@@ -20,11 +20,17 @@
               </h3>
               <p class="card-info">
                 <span class="nick-name">{{ article.author }}</span>
-                <span class="created-time">{{ article.time | formated }}</span>
+                <span class="created-time">{{
+                  article.createdAt | formated
+                }}</span>
               </p>
               <p class="card-desc">{{ article.desc }}</p>
               <ul class="card-tags">
-                <li class="card-tag" v-for="item in article.tags" :key="item">
+                <li
+                  class="card-tag"
+                  v-for="item in getTags(article.tag)"
+                  :key="item"
+                >
                   {{ item }}
                 </li>
               </ul>
@@ -54,7 +60,7 @@
         </section>
         <section class="original-projects">
           <h4>在写</h4>
-           <div class="projects">
+          <div class="projects">
             <ul>
               <li class="project" v-for="item in projects" :key="item.id">
                 <a :href="item.link">
@@ -73,16 +79,17 @@
 
 <script>
 // @ is an alias to /src
-import { log } from '@/scripts/mixin'
-import Slider from '@/base/Slider/slider'
+import { log } from "@/scripts/mixin";
+import Slider from "@/base/Slider/slider";
+import moment from "moment";
 
 // 这是一种 cjs 方式兼容 脚本方式的用法！
-const Velocity = window.Velocity
-const _ = window._
+const Velocity = window.Velocity;
+const _ = window._;
 
 export default {
   // 其他
-  name: 'Home',
+  name: "Home",
   components: {
     Slider
     /* You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build. */
@@ -91,153 +98,97 @@ export default {
     // 'x-b': (h) => h(<div>comp B</div>)
   },
   filters: {
-    formated (val) {
-      return val
+    formated(val) {
+      const SHOW_TYPE = "YYYY-MM-DD";
+      return moment(val).format(SHOW_TYPE);
     }
   },
   // 数据
-  data () {
+  data() {
     return {
       originals: [
         {
           id: 1,
-          tag: ['vue'],
-          title: 'Vue 2.6.11 源码拜读'
+          tag: ["vue"],
+          title: "Vue 2.6.11 源码拜读"
         },
         {
           id: 2,
-          tag: ['react'],
-          title: 'React 16.8 源码拜读'
+          tag: ["react"],
+          title: "React 16.8 源码拜读"
         },
         {
           id: 3,
-          tag: ['react'],
-          title: 'Redux React-Router React-Redux 源码细读'
+          tag: ["react"],
+          title: "Redux React-Router React-Redux 源码细读"
         },
         {
           id: 4,
-          tag: ['vue'],
-          title: 'Vuex Vue-Router 源码细读'
+          tag: ["vue"],
+          title: "Vuex Vue-Router 源码细读"
         },
         {
           id: 5,
-          tag: ['framework'],
-          title: '司徒大佬框架设计'
+          tag: ["framework"],
+          title: "司徒大佬框架设计"
         },
         {
           id: 6,
-          tag: ['engineer'],
-          title: 'webpack 5'
+          tag: ["engineer"],
+          title: "webpack 5"
         }
       ],
       projects: [
-        { id: 1, title: '商城应用', link: '' },
-        { id: 2, title: '重构火车APP', link: '' },
-        { id: 3, title: 'TS 重写 Axios', link: '' },
-        { id: 4, title: 'Vue TS 搭建自己的组件库', link: '' },
-        { id: 5, title: 'vue-mooker', link: '' },
-        { id: 6, title: '依据模板字符串和tapable 实现的模板引擎', link: '' }
+        { id: 1, title: "商城应用", link: "" },
+        { id: 2, title: "重构火车APP", link: "" },
+        { id: 3, title: "TS 重写 Axios", link: "" },
+        { id: 4, title: "Vue TS 搭建自己的组件库", link: "" },
+        { id: 5, title: "vue-mooker", link: "" },
+        { id: 6, title: "依据模板字符串和tapable 实现的模板引擎", link: "" }
       ],
-      view: 'x-a',
+      view: "x-a",
       show: false,
       showp: false,
       showa: false,
       items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-      articles: [
-        {
-          title: '这个地方是列表',
-          id: 0,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 1,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 2,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 3,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 4,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 5,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 6,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        },
-        {
-          title: '这个地方是列表',
-          id: 7,
-          author: 'zhazhahui',
-          time: new Date().getTime(),
-          desc: '我是描述，不一样的描述',
-          tags: ['前端', '运维', '工程化', '产品']
-        }
-      ]
-    }
+      articles: []
+    };
   },
 
   // 行为
   methods: {
-    shuffle () {
-      this.articles = _.shuffle(this.articles)
+    async loadData() {
+      const articles = await this.$api.getArticles();
+      this.articles = articles;
     },
-    beforeEnter: function (el) {
-      el.style.opacity = 0
-      el.style.transformOrigin = 'left'
+
+    getTags(tag) {
+      return tag.split(",");
     },
-    enter: function (el, done) {
-      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
-      Velocity(el, { fontSize: '1em' }, { complete: done })
+    shuffle() {
+      this.articles = _.shuffle(this.articles);
     },
-    leave: function (el, done) {
-      Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
-      Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
+    beforeEnter: function(el) {
+      el.style.opacity = 0;
+      el.style.transformOrigin = "left";
+    },
+    enter: function(el, done) {
+      Velocity(el, { opacity: 1, fontSize: "1.4em" }, { duration: 300 });
+      Velocity(el, { fontSize: "1em" }, { complete: done });
+    },
+    leave: function(el, done) {
+      Velocity(el, { translateX: "15px", rotateZ: "50deg" }, { duration: 600 });
+      Velocity(el, { rotateZ: "100deg" }, { loop: 2 });
       Velocity(
         el,
         {
-          rotateZ: '45deg',
-          translateY: '30px',
-          translateX: '30px',
+          rotateZ: "45deg",
+          translateY: "30px",
+          translateX: "30px",
           opacity: 0
         },
         { complete: done }
-      )
+      );
     }
   },
 
@@ -245,10 +196,11 @@ export default {
   mixins: [log],
 
   // 生命周期
-  mounted () {
+  mounted() {
     // this.log('我真的可以调用')
+    this.loadData();
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -324,7 +276,7 @@ $bgcolor: #f0f2f5;
     .articles {
       margin: 20px 0;
       .article {
-        background-image: linear-gradient(208deg, #39a1f7 0%, #a875ff 100%);
+        background-image: linear-gradient(208deg, #272829 0%, #9e8cbd 100%);
         box-shadow: 0 2px 15px 0 rgba(74, 144, 226, 0.6);
         text-shadow: 0 2px 15px rgba($color: #d9d9d9, $alpha: 0.65);
         border-radius: 8px;
@@ -338,6 +290,7 @@ $bgcolor: #f0f2f5;
         color: #000000;
         margin-bottom: 20px;
         padding: 15px;
+        text-align: left;
         .card {
           &-title {
             font-size: 21px;
@@ -347,11 +300,21 @@ $bgcolor: #f0f2f5;
           &-info {
             font-size: 13px;
             color: rgba($color: #000000, $alpha: 0.65);
+            margin-top: 8px;
+            .nick-name {
+              font-size: 12px;
+              color: currentColor;
+            }
+
+            .created-time {
+              padding-left: 10px;
+              font-size: 12px;
+            }
           }
 
           &-desc {
-            margin: 14px 0;
-            font-size: 16px;
+            margin: 20px 0;
+            font-size: 14px;
             color: rgba($color: #000000, $alpha: 0.65);
           }
 
@@ -385,6 +348,32 @@ $bgcolor: #f0f2f5;
       .original-articles,
       .original-projects {
         min-height: 200px;
+      }
+
+      .originals {
+        padding: 10px;
+        text-align: left;
+        ul {
+          .original {
+            box-sizing: border-box;
+            padding: 6px 8px;
+            margin-bottom: 10px;
+            background: #eee;
+            color: #222;
+            border-radius: 8px;
+            &:hover {
+              cursor: pointer;
+            }
+
+            a {
+              .wrapper {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
       }
     }
   }
