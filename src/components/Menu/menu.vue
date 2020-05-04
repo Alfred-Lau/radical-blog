@@ -11,7 +11,7 @@
 <script>
 export default {
 
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -25,11 +25,18 @@ export default {
   }
 
   &-item{
+    color: #000;
+    list-style: none;
+
     span {
       border-right: 1px solid #eeeeff;
       padding: 0 20px;
       display: inline-block;
       line-height: 20px;
+      a{
+
+        color: #000;
+      }
     }
   }
 }

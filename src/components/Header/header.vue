@@ -1,7 +1,7 @@
 <template>
   <div :class='{header : true, fixed : isFixed}' >
     <h3 class="header-title">
-      <a href="">十年挑灯看剑</a>
+      <a href="" class="big-title">十年挑灯看剑</a>
       <div class="menu-wrapper">
         <Menu></Menu>
       </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script lang='typescript'>
-import Menu from '../Menu/menu.vue'
+import Menu from '../Menu/menu.vue';
 
 export default {
   name: 'Header',
@@ -25,22 +25,22 @@ export default {
     return {
       query: '',
       isFixed: false
-    }
+    };
   },
   mounted () {
     // 需要添加防抖
     window.addEventListener('scroll', () => {
       // 滚动 距离上部 Header 组件高度的时候 fixed
-      const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+      const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
       if (top > 50) {
-        this.isFixed = true
+        this.isFixed = true;
       } else {
-        this.isFixed = false
+        this.isFixed = false;
       }
-    })
+    });
   }
 
-}
+};
 </script>
 
 <style lang='scss'>
@@ -64,6 +64,9 @@ export default {
     float: left;
     padding-left: 60px;
     height: 100%;
+    .big-title {
+      color: #222;
+    }
     .menu-wrapper {
       display: inline-block;
       margin-left: 100px;

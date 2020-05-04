@@ -147,7 +147,11 @@ export default {
         { id: 3, title: "TS 重写 Axios", link: "" },
         { id: 4, title: "Vue TS 搭建自己的组件库", link: "" },
         { id: 5, title: "vue-mooker", link: "" },
-        { id: 6, title: "依据模板字符串和tapable 实现的模板引擎", link: "" }
+        { id: 6, title: "模板引擎", link: "" },
+        { id: 7, title: "@cli/core", link: "" },
+        { id: 8, title: "H5 饿了么", link: "" },
+        { id: 9, title: "个人网站小程序版本", link: "" },
+        { id: 10, title: "个人网站Flutter版本", link: "" }
       ],
       view: "x-a",
       show: false,
@@ -418,6 +422,7 @@ $bgcolor: #f0f2f5;
               margin-right: 10px;
               margin-bottom: 20px;
               a {
+
                 .wrapper img {
                   width: 100%;
                 }
@@ -427,6 +432,10 @@ $bgcolor: #f0f2f5;
                     0 6px 20px 0 rgba(0, 0, 0, 0.19);
                   border-radius: 4px;
                   min-height: 200px;
+                  padding: 5px;
+                  font-size: 14px;
+                  color: darkgreen;
+                  background: rgba(90,90,190, 0.6);
                 }
                 .wrapper span {
                   font-size: 12px;
