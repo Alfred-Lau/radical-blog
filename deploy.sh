@@ -1,3 +1,4 @@
 #! /bin/bash
 
-scp -r ./dist root@aliyun:/usr/local/nginx/html
+mv dist blog
+scp -r ./blog root@aliyun:/usr/local/nginx/html
