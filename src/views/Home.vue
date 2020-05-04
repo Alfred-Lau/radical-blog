@@ -41,17 +41,16 @@
     </section>
     <section class="block right">
       <h3 class="title">
-        持续输出
+        TOP HIT
       </h3>
       <div class="right-container">
         <section class="original-articles">
-          <h4>在看</h4>
+          <h4>------&nbsp;&nbsp;&nbsp;在看&nbsp;&nbsp;&nbsp;------</h4>
           <div class="originals">
             <ul>
               <li class="original" v-for="item in originals" :key="item.id">
                 <a :href="item.link">
                   <div class="wrapper">
-                    <img src="/static/img/03_pingtai/03_02.jpg" alt="" />
                     <div>
                       <span> {{ item.title }}</span>
                     </div>
@@ -62,12 +61,13 @@
           </div>
         </section>
         <section class="original-projects">
-          <h4>在写</h4>
+          <h4>------&nbsp;&nbsp;&nbsp;在写&nbsp;&nbsp;&nbsp;------</h4>
           <div class="projects">
             <ul>
               <li class="project" v-for="item in projects" :key="item.id">
                 <a :href="item.link">
                   <div class="wrapper">
+                    <img src="/static/img/03_pingtai/03_02.jpg" alt="" />
                     {{ item.title }}
                   </div>
                 </a>
@@ -211,10 +211,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bgcolor: #f0f2f5;
+@import '../common/index.scss';
 
 .home {
-  background: $bgcolor;
+  background: var(--bgcolor);
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -380,6 +380,7 @@ $bgcolor: #f0f2f5;
       }
 
       .original-articles {
+        margin-top: 30px;
         .originals {
           padding: 10px;
           text-align: left;

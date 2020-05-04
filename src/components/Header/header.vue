@@ -66,6 +66,7 @@ export default {
     height: 100%;
     .big-title {
       color: #222;
+      font-size: 24px;
     }
     .menu-wrapper {
       display: inline-block;
@@ -77,6 +78,7 @@ export default {
     height: 120px;
     float: right;
     margin-right: 40px;
+    font-size: 20px;
     &-box {
       width: 220px;
       height: 30px;
@@ -87,7 +89,7 @@ export default {
       border: 1px solid #eee;
       padding: 0 5px;
 
-      transition: width .8s, border-color .8s;
+      transition: width .6s, border-color .6s;
       &:focus{
         width: 400px;
         border-color: #ccc;

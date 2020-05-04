@@ -3,7 +3,7 @@
     <div class="swiper-box">
         <swiper :options="swiperOptions">
           <swiper-slide v-for="item in swiperData" :key="item.id">
-            <a :href="`/#/product/${item.id}`"
+            <a href=""
               ><img :src="`/imgs/3.jpg`" alt=""
             /></a>
           </swiper-slide>
