@@ -4,7 +4,7 @@
         <swiper :options="swiperOptions">
           <swiper-slide v-for="item in swiperData" :key="item.id">
             <a :href="`/#/product/${item.id}`"
-              ><img :src="`/imgs/${item.id}.jpg`" alt=""
+              ><img :src="`/imgs/3.jpg`" alt=""
             /></a>
           </swiper-slide>
           <!-- 如果需要导航按钮 -->
@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 
-import 'swiper/css/swiper.css'
+import 'swiper/css/swiper.css';
 
 export default {
   name: 'Slider',
@@ -69,7 +69,7 @@ export default {
           link: ''
         }
       ]
-    }
+    };
   },
   methods: {
   },
@@ -98,11 +98,11 @@ export default {
             id: 5,
             title: 'ds'
           }
-        ]
+        ];
       }
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
