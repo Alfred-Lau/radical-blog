@@ -3,7 +3,7 @@
     <section class="block left">
       <div class="left-container">
         <p class="ask">你想问什么,万一有回复呢</p>
-        <input type="text" name="question" id="question" />
+        <input type="text" name="question" id="question" class="ask-input" />
       </div>
     </section>
     <section class="block main">
@@ -51,7 +51,10 @@
               <li class="original" v-for="item in originals" :key="item.id">
                 <a :href="item.link">
                   <div class="wrapper">
-                    {{ item.title }}
+                    <img src="/static/img/03_pingtai/03_02.jpg" alt="" />
+                    <div>
+                      <span> {{ item.title }}</span>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -218,6 +221,17 @@ $bgcolor: #f0f2f5;
       background: #fff;
       margin: 10px;
       padding: 20px;
+      .ask {
+      }
+
+      .ask-input {
+        width: 90%;
+        margin: 20px auto;
+        outline: none;
+        border-radius: 6px;
+        padding: 0 8px;
+        height: 36px;
+      }
     }
   }
 
@@ -227,6 +241,17 @@ $bgcolor: #f0f2f5;
     &-container {
       margin: 10px 0 10px 0;
       padding: 0 0 10px 0;
+      .ask {
+      }
+
+      .ask-input {
+        width: 94%;
+        height: 36px;
+        margin: 20px auto;
+        border-radius: 10px;
+        outline: none;
+        padding: 0 8px;
+      }
     }
 
     // 定义 CSS变形 transition 和 CSS动画 animation 的时机
@@ -350,26 +375,65 @@ $bgcolor: #f0f2f5;
         min-height: 200px;
       }
 
-      .originals {
-        padding: 10px;
-        text-align: left;
-        ul {
-          .original {
-            box-sizing: border-box;
-            padding: 6px 8px;
-            margin-bottom: 10px;
-            background: #eee;
-            color: #222;
-            border-radius: 8px;
-            &:hover {
-              cursor: pointer;
-            }
+      .original-articles {
+        .originals {
+          padding: 10px;
+          text-align: left;
+          ul {
+            .original {
+              box-sizing: border-box;
+              padding: 6px 8px;
+              margin-bottom: 10px;
+              background: #eee;
+              color: #222;
+              border-radius: 8px;
+              &:hover {
+                cursor: pointer;
+              }
 
-            a {
-              .wrapper {
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
+              a {
+                .wrapper {
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .original-projects {
+        margin-top: 20px;
+        .projects {
+          margin-top: 20px;
+
+          ul {
+            display: flex;
+            /* 这是每行三个的核心所在 */
+            flex-wrap: wrap;
+            .project {
+              list-style: none;
+              flex: 0 0 calc(50% - 10px);
+              margin-right: 10px;
+              margin-bottom: 20px;
+              a {
+                .wrapper img {
+                  width: 100%;
+                }
+                .wrapper {
+                  background-color: white;
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  border-radius: 4px;
+                  min-height: 200px;
+                }
+                .wrapper span {
+                  font-size: 12px;
+                  color: #bfbfbf;
+                  display: block;
+                  letter-spacing: 2px;
+                }
               }
             }
           }
