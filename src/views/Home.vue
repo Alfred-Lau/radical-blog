@@ -142,7 +142,7 @@ export default {
         }
       ],
       projects: [
-        { id: 1, title: "商城应用", link: "" },
+        { id: 1, title: "商城应用", link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/" },
         { id: 2, title: "重构火车APP", link: "" },
         { id: 3, title: "TS 重写 Axios", link: "" },
         { id: 4, title: "Vue TS 搭建自己的组件库", link: "" },
