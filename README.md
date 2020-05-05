@@ -1,29 +1,15 @@
 # radical-blog
 
-## Project setup
-```
-yarn install
-```
+## 支持特性
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1.ts vue集成
+2.darkmode
+3.vue sfc custome block and specific webpack loader
+4.vue全家桶以及高级用法api
+5.shadowdom
+6.性能优化sw
+7.长列表
+8.骨架屏
+9.websocket
+10.webrtc
+11.更多
