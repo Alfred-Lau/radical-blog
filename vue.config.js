@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   pwa: {
     iconPaths: {
@@ -13,5 +15,11 @@ module.exports = {
       args[0] = { ...args[0], title: "Stay Hungry. Stay Focus." };
       return args;
     });
+
+    api.module
+      .rule('docs')
+      .resourceQuery(/blockType=docs/)
+      .use('docs')
+      .loader(require.resolve('./loaders/docs-loader.js'));
   }
 };
