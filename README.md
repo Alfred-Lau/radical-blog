@@ -3,8 +3,8 @@
 ## 支持特性
 
 1.ts vue集成
-2.darkmode
-3.vue sfc custome block and specific webpack loader
+2.darkmode done
+3.vue sfc custome block and specific webpack loader done
 4.vue全家桶以及高级用法api
 5.shadowdom
 6.性能优化sw
