@@ -4,7 +4,7 @@
         <swiper :options="swiperOptions">
           <swiper-slide v-for="item in swiperData" :key="item.id">
             <a href=""
-              ><img :src="`/imgs/3.jpg`" alt=""
+              ><img :src="`/imgs/3.webp`" alt=""
             /></a>
           </swiper-slide>
           <!-- 如果需要导航按钮 -->
@@ -118,6 +118,11 @@ export default {
       width: 100%;
       img {
         width: 100%;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: translateY(-95px);
       }
     }
 

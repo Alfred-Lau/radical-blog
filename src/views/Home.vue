@@ -5,6 +5,12 @@
         <p class="ask">你想问什么,万一有回复呢</p>
         <input type="text" name="question" id="question" class="ask-input" />
       </div>
+      <div class="work-hard">
+        <div class="work-calander">
+          我是工作日历
+          <calendar></calendar>
+        </div>
+      </div>
     </section>
     <section class="block main">
       <div class="main-container">
@@ -44,6 +50,22 @@
         TOP HIT
       </h3>
       <div class="right-container">
+        <section class="original-projects">
+          <h4>------&nbsp;&nbsp;&nbsp;在写&nbsp;&nbsp;&nbsp;------</h4>
+          <div class="projects">
+            <ul>
+              <li class="project" v-for="item in projects" :key="item.id">
+                <a :href="item.link">
+                  <div class="wrapper">
+                    <img src="/imgs/project-bg.png" alt="project-bg" />
+                    {{ item.title }}
+                  </div>
+                </a>
+                <div class="show-detail-modal">{{item.content}}</div>
+              </li>
+            </ul>
+          </div>
+        </section>
         <section class="original-articles">
           <h4>------&nbsp;&nbsp;&nbsp;在看&nbsp;&nbsp;&nbsp;------</h4>
           <div class="originals">
@@ -60,21 +82,6 @@
             </ul>
           </div>
         </section>
-        <section class="original-projects">
-          <h4>------&nbsp;&nbsp;&nbsp;在写&nbsp;&nbsp;&nbsp;------</h4>
-          <div class="projects">
-            <ul>
-              <li class="project" v-for="item in projects" :key="item.id">
-                <a :href="item.link">
-                  <div class="wrapper">
-                    <img src="/static/img/03_pingtai/03_02.jpg" alt="" />
-                    {{ item.title }}
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
       </div>
     </section>
   </div>
@@ -84,6 +91,7 @@
 // @ is an alias to /src
 import { log } from "@/scripts/mixin";
 import Slider from "@/base/Slider/slider";
+import Calendar from '@/components/Calendar/calendar';
 import moment from "moment";
 
 // 这是一种 cjs 方式兼容 脚本方式的用法！
@@ -94,6 +102,7 @@ export default {
   // 其他
   name: "Home",
   components: {
+    Calendar,
     Slider
     /* You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build. */
     // 'x-b': { render: h => { return h('div', {}, 'b') } }
@@ -144,11 +153,16 @@ export default {
       projects: [
         { id: 1, title: "商城应用", link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/" },
         { id: 2, title: "重构火车APP", link: "" },
-        { id: 3, title: "TS 重写 Axios", link: "" },
+        { id: 3, title: "TS 重写 Axios", link: "https://github.com/Alfred-Lau/ts-axios" },
         { id: 4, title: "Vue TS 搭建自己的组件库", link: "" },
-        { id: 5, title: "vue-mooker", link: "" },
-        { id: 6, title: "模板引擎", link: "" },
-        { id: 7, title: "@cli/core", link: "" },
+        { id: 5, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase" },
+        { id: 6, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine" },
+        { id: 11, title: "Vscode emmet 定制扩展", link: "https://github.com/Alfred-Lau/fast-template-engine" },
+        { id: 12, title: "mirror", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 13, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 14, title: "", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 15, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 7, title: "@cli/core", link: "https://github.com/Alfred-Lau/cli_core_codebase" },
         { id: 8, title: "H5 饿了么", link: "" },
         { id: 9, title: "个人网站小程序版本", link: "" },
         { id: 10, title: "个人网站Flutter版本", link: "" }
@@ -225,6 +239,7 @@ export default {
       background: #fff;
       margin: 10px;
       padding: 20px;
+      border-radius: 6px;
       .ask {
       }
 
@@ -303,7 +318,8 @@ export default {
     }
 
     .articles {
-      margin: 20px 0;
+      margin: 10px 0;
+      padding: 10px;
       .article {
         background-image: linear-gradient(208deg, #272829 0%, #9e8cbd 100%);
         box-shadow: 0 2px 15px 0 rgba(74, 144, 226, 0.6);
@@ -371,6 +387,7 @@ export default {
     margin: 10px;
     padding: 20px;
     width: 300px;
+    border-radius: 6px;
     &-container {
       display: flex;
       flex-direction: column;
@@ -422,6 +439,21 @@ export default {
               flex: 0 0 calc(50% - 10px);
               margin-right: 10px;
               margin-bottom: 20px;
+              position: relative;
+
+              .show-detail-modal {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                height: 0;
+                width: 0;
+                font-size:12px;
+                background:#110;
+                border-radius:6px;
+                color:#fff;
+                transition: all 0.6s;
+              }
               a {
 
                 .wrapper img {
@@ -432,9 +464,9 @@ export default {
                   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
                     0 6px 20px 0 rgba(0, 0, 0, 0.19);
                   border-radius: 4px;
-                  min-height: 200px;
-                  padding: 5px;
+                  height: 160px;
                   font-size: 14px;
+                  padding-bottom: 10px;
                   color: darkgreen;
                   background: rgba(90,90,190, 0.6);
                 }
@@ -443,6 +475,23 @@ export default {
                   color: #bfbfbf;
                   display: block;
                   letter-spacing: 2px;
+                }
+              }
+
+              &:hover{
+                .show-detail-modal {
+                  position: absolute;
+                  top:0;
+                  left: 0;
+                  display: block;
+                  opacity: .8;
+                  height: 100%;
+                  width: 100%;
+                  background: #d9d9d9;
+                  font-size:12px;
+                  background:#110;
+                  border-radius:6px;
+                  color:#fff;
                 }
               }
             }
