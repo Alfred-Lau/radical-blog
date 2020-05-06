@@ -7,8 +7,7 @@
       </div>
       <div class="work-hard">
         <div class="work-calander">
-          我是工作日历
-          <calendar></calendar>
+          <calendar @day="handleDay"></calendar>
         </div>
       </div>
     </section>
@@ -178,6 +177,11 @@ export default {
 
   // 行为
   methods: {
+    handleDay(data) {
+      const { year, month, week, day } = data;
+      const msg = `you clicked ${year} 年${month}月 ${day}日，是第 ${week} 周.`;
+      alert(msg);
+    },
     async loadData() {
       const articles = await this.$api.getArticles();
       this.articles = articles;
