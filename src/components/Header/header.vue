@@ -1,7 +1,7 @@
 <template>
   <div :class='{header : true, fixed : isFixed}' >
     <h3 class="header-title">
-      <a href="" class="big-title">十年挑灯看剑</a>
+      <a href="" class="big-title">挑灯看剑</a>
       <div class="menu-wrapper">
         <Menu></Menu>
       </div>

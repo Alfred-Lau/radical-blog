@@ -60,8 +60,8 @@
                     <img src="/imgs/project-bg.png" alt="project-bg" />
                     {{ item.title }}
                   </div>
+                  <div class="show-detail-modal">{{item.content}}</div>
                 </a>
-                <div class="show-detail-modal">{{item.content}}</div>
               </li>
             </ul>
           </div>
@@ -151,21 +151,21 @@ export default {
         }
       ],
       projects: [
-        { id: 1, title: "商城应用", link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/" },
-        { id: 2, title: "重构火车APP", link: "" },
-        { id: 3, title: "TS 重写 Axios", link: "https://github.com/Alfred-Lau/ts-axios" },
-        { id: 4, title: "Vue TS 搭建自己的组件库", link: "" },
-        { id: 5, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase" },
-        { id: 6, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine" },
-        { id: 11, title: "Vscode emmet 定制扩展", link: "https://github.com/Alfred-Lau/fast-template-engine" },
-        { id: 12, title: "mirror", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 13, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 14, title: "", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 15, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 7, title: "@cli/core", link: "https://github.com/Alfred-Lau/cli_core_codebase" },
-        { id: 8, title: "H5 饿了么", link: "" },
-        { id: 9, title: "个人网站小程序版本", link: "" },
-        { id: 10, title: "个人网站Flutter版本", link: "" }
+        { id: 1, title: "商城应用", link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/", content: '使用 Vue 2.6.11 开发的电商 PC 网站' },
+        { id: 2, title: "H5 外卖", link: "http://h5waimai.lazy-minus-your-intelligence.com", content: '使用 Vue 2.0.x 开发的 H5 外卖程序' },
+        { id: 3, title: "个人项目开发看板", link: "http://project.lazy-minus-your-intelligence.com", content: '个人项目开发进度和灵感记录看板，以及网站后续发展开发规划' },
+        { id: 4, title: "重构火车APP", link: "", content: 'React Hooks!' },
+        { id: 5, title: "Vue TS 搭建自己的组件库", link: "", content: '没有自己组件库的程序员是不完整的~【手工狗头】' },
+        { id: 6, title: "个人网站小程序版本", link: "", content: '移动端的程序员 hack' },
+        { id: 7, title: "TS 重写 Axios", link: "https://github.com/Alfred-Lau/ts-axios", content: '此处是个轮子' },
+        { id: 8, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 9, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 10, title: "mirror", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 11, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 12, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 13, title: "@cli/core", link: "https://github.com/Alfred-Lau/cli_core_codebase", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 14, title: "Vscode emmet 定制扩展", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 15, title: "个人网站Flutter版本", link: "", content: '@cli/core的缘起之作，只支持命令行有限操作' }
       ],
       view: "x-a",
       show: false,
