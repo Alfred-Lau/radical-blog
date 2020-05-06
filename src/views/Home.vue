@@ -5,10 +5,14 @@
         <p class="ask">你想问什么,万一有回复呢</p>
         <input type="text" name="question" id="question" class="ask-input" />
       </div>
-      <div class="work-hard">
+      <div class="work-hard left-container">
         <div class="work-calander">
           <calendar @day="handleDay"></calendar>
         </div>
+      </div>
+
+      <div class="hot-spot left-container">
+        我是热点 Feeds
       </div>
     </section>
     <section class="block main">
@@ -157,10 +161,10 @@ export default {
         { id: 5, title: "Vue TS 搭建自己的组件库", link: "", content: '没有自己组件库的程序员是不完整的~【手工狗头】' },
         { id: 6, title: "个人网站小程序版本", link: "", content: '移动端的程序员 hack' },
         { id: 7, title: "TS 重写 Axios", link: "https://github.com/Alfred-Lau/ts-axios", content: '此处是个轮子' },
-        { id: 8, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 9, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 10, title: "mirror", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 11, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 8, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase", content: 'Vue 的 mock 插件，"我"还能做的更多！' },
+        { id: 9, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '基于 es6 字符串实现模板引擎' },
+        { id: 10, title: "mirror", link: "https://github.com/Alfred-Lau/mirror", content: '@cli/core的缘起之作，只支持命令行有限操作' },
+        { id: 11, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '个人效率神器，Electron' },
         { id: 12, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
         { id: 13, title: "@cli/core", link: "https://github.com/Alfred-Lau/cli_core_codebase", content: '@cli/core的缘起之作，只支持命令行有限操作' },
         { id: 14, title: "Vscode emmet 定制扩展", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },

@@ -140,9 +140,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-    .calendar-container {
-        padding: 2vw 3vw;
-    }
+
     .year {
         text-align: center;
         margin-bottom: 10px;
