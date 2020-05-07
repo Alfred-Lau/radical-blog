@@ -39,8 +39,12 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
+  /* 滚动行为 */
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 420, y: 420 };
+  },
   routes
 });
 

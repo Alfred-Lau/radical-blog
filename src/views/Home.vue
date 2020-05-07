@@ -12,7 +12,19 @@
       </div>
 
       <div class="hot-spot left-container">
-        我是热点 Feeds
+        <h3 class="read-it-later">
+        Read It Later Feeds
+        </h3>
+        <section class="read-it-later-content">
+          <ul>
+            <li v-for="item in reads" :key="item.id">
+              <div class="read-content">
+                <i class="icon hot">*</i>
+                <p class="read-main">{{item.content}}</p>
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
     <section class="block main">
@@ -121,6 +133,16 @@ export default {
   // 数据
   data() {
     return {
+      reads: [
+        { id: 1, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 2, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 3, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 4, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 5, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 6, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 7, content: 'Webpack 5 is on the way ,bundleless is coming!' },
+        { id: 8, content: 'Webpack 5 is on the way ,bundleless is coming!' }
+      ],
       originals: [
         {
           id: 1,
@@ -260,6 +282,31 @@ export default {
         height: 36px;
       }
     }
+
+    .hot-spot{
+      .read-it-later{
+
+      }
+
+      .read-it-later-content{
+
+        li{
+          position: relative;
+          margin: 8px 0;
+          padding: 6px 0;
+        }
+
+        .read-content{
+          display: flex;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          .read-main{
+
+          }
+        }
+      }
+    }
   }
 
   .main {
@@ -344,6 +391,9 @@ export default {
         margin-bottom: 20px;
         padding: 15px;
         text-align: left;
+        &:hover{
+          cursor: pointer;
+        }
         .card {
           &-title {
             font-size: 21px;

@@ -1,9 +1,12 @@
 <template>
   <div class="menu">
     <ul class="menu-items">
-      <li class="menu-item"><span><router-link to="/">首页 </router-link></span></li>
-      <li class="menu-item"><span><router-link to="/piecework">作品</router-link></span></li>
-      <li class="menu-item"><span><router-link to="/meaning">生活</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/">~~</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/piecework">所以然</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/meaning">码上来</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/tourist">林泉之秀</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/reading">明日之屋</router-link></span></li>
+      <li class="menu-item"><span><router-link to="/about">我</router-link></span></li>
     </ul>
   </div>
 </template>

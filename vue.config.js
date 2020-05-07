@@ -1,4 +1,5 @@
-const path = require('path');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const LogWebpackPlugin = require('./plugins/LogWebpackPlugin');
 
 module.exports = {
   pwa: {
@@ -9,6 +10,12 @@ module.exports = {
       maskIcon: "favicon.ico",
       msTileImage: "favicon.ico"
     }
+  },
+  configureWebpack(api) {
+    api.plugins.push(
+      new LogWebpackPlugin({
+      })
+    );
   },
   chainWebpack(api) {
     api.plugin("html").tap(args => {
@@ -22,4 +29,5 @@ module.exports = {
       .use('docs')
       .loader(require.resolve('./loaders/docs-loader.js'));
   }
+
 };
