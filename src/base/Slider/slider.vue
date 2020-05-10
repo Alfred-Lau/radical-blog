@@ -104,7 +104,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin: auto;
-  width: 1000px;
+  // width: 1000px;
   height: 500px;
   overflow: hidden;
 
@@ -114,6 +114,7 @@ export default {
     width: 100%;
     img {
       width: 100%;
+      // width: 400px;
     }
 
     .swiper-button-prev,

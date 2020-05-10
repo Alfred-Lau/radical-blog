@@ -326,6 +326,7 @@ export default {
 
   .left {
     width: 300px;
+    min-width: 300px;
     &-container {
       background: #fff;
       margin: 10px;
@@ -370,6 +371,7 @@ export default {
   .main {
     flex: 1;
     background: #f0f2f5;
+    overflow: hidden;
     &-container {
       margin: 10px 0 10px 0;
       padding: 0 0 10px 0;
@@ -503,6 +505,7 @@ export default {
     margin: 10px;
     padding: 20px;
     width: 300px;
+    min-width: 300px;
     border-radius: 6px;
     &-container {
       display: flex;
