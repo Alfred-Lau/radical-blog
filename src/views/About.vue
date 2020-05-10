@@ -1,22 +1,28 @@
 <template>
   <div class="about">
-    about
     <div class="about-container">
-      <iframe
+      <!-- <iframe
         src="http://www.baidu.com"
         frameborder="0"
         title="Inline Frame Example"
         width="100%"
         height="600"
       >
-      </iframe>
+      </iframe> -->
+      <screen></screen>
     </div>
   </div>
 </template>
 
-<script lang='typescript'>
+<script lang="typescript">
+
+import Screen from '@/components/Screen/screen';
+
 export default {
-  name: 'About'
+  name: 'About',
+  components: {
+    Screen
+  }
 
 };
 </script>
