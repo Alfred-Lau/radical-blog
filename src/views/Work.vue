@@ -22,87 +22,87 @@ export default {
     return {
       infos: [
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "#018f69"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "red"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "blue"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "yellow"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "blue"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "blue"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         },
         {
-          text: "Write my first blog post ever on Medium",
+          text: "向个人项目进行日常迭代",
           date: "2020 02 04",
           category: {
-            tag: "medium",
+            tag: "development",
             color: "blue"
           },
           link: {
             url: "",
-            text: "Read more"
+            text: "More"
           }
         }
       ]

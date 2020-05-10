@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 /* 设置时间轴样式 */
 .timeline-item {
   display: flex;
@@ -110,6 +110,9 @@ export default {
   left: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content .tag {

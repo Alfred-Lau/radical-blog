@@ -13,14 +13,14 @@
 
       <div class="hot-spot left-container">
         <h3 class="read-it-later">
-        Read It Later Feeds
+          稍后阅读
         </h3>
         <section class="read-it-later-content">
           <ul>
             <li v-for="item in reads" :key="item.id">
               <div class="read-content">
                 <i class="icon hot">*</i>
-                <p class="read-main">{{item.content}}</p>
+                <p class="read-main">{{ item.content }}</p>
               </div>
             </li>
           </ul>
@@ -75,7 +75,7 @@
                     <img src="/imgs/project-bg.png" alt="project-bg" />
                     {{ item.title }}
                   </div>
-                  <div class="show-detail-modal">{{item.content}}</div>
+                  <div class="show-detail-modal">{{ item.content }}</div>
                 </a>
               </li>
             </ul>
@@ -106,7 +106,7 @@
 // @ is an alias to /src
 import { log } from "@/scripts/mixin";
 import Slider from "@/base/Slider/slider";
-import Calendar from '@/components/Calendar/calendar';
+import Calendar from "@/components/Calendar/calendar";
 import moment from "moment";
 
 // 这是一种 cjs 方式兼容 脚本方式的用法！
@@ -133,16 +133,7 @@ export default {
   // 数据
   data() {
     return {
-      reads: [
-        { id: 1, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 2, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 3, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 4, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 5, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 6, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 7, content: 'Webpack 5 is on the way ,bundleless is coming!' },
-        { id: 8, content: 'Webpack 5 is on the way ,bundleless is coming!' }
-      ],
+      reads: [],
       originals: [
         {
           id: 1,
@@ -176,21 +167,91 @@ export default {
         }
       ],
       projects: [
-        { id: 1, title: "商城应用", link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/", content: '使用 Vue 2.6.11 开发的电商 PC 网站' },
-        { id: 2, title: "H5 外卖", link: "http://h5waimai.lazy-minus-your-intelligence.com", content: '使用 Vue 2.0.x 开发的 H5 外卖程序' },
-        { id: 3, title: "个人项目开发看板", link: "http://project.lazy-minus-your-intelligence.com", content: '个人项目开发进度和灵感记录看板，以及网站后续发展开发规划' },
-        { id: 4, title: "重构火车APP", link: "", content: 'React Hooks!' },
-        { id: 5, title: "Vue TS 搭建自己的组件库", link: "", content: '没有自己组件库的程序员是不完整的~【手工狗头】' },
-        { id: 6, title: "个人网站小程序版本", link: "", content: '移动端的程序员 hack' },
-        { id: 7, title: "TS 重写 Axios", link: "https://github.com/Alfred-Lau/ts-axios", content: '此处是个轮子' },
-        { id: 8, title: "vue-mooker", link: "https://github.com/Alfred-Lau/vue-mocker-testcase", content: 'Vue 的 mock 插件，"我"还能做的更多！' },
-        { id: 9, title: "模板引擎", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '基于 es6 字符串实现模板引擎' },
-        { id: 10, title: "mirror", link: "https://github.com/Alfred-Lau/mirror", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 11, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '个人效率神器，Electron' },
-        { id: 12, title: "TianGong", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 13, title: "@cli/core", link: "https://github.com/Alfred-Lau/cli_core_codebase", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 14, title: "Vscode emmet 定制扩展", link: "https://github.com/Alfred-Lau/fast-template-engine", content: '@cli/core的缘起之作，只支持命令行有限操作' },
-        { id: 15, title: "个人网站Flutter版本", link: "", content: '@cli/core的缘起之作，只支持命令行有限操作' }
+        {
+          id: 1,
+          title: "商城应用",
+          link: "http://xiaomimall.lazy-minus-your-intelligence.com/#/",
+          content: "使用 Vue 2.6.11 开发的电商 PC 网站"
+        },
+        {
+          id: 2,
+          title: "H5 外卖",
+          link: "http://h5waimai.lazy-minus-your-intelligence.com",
+          content: "使用 Vue 2.0.x 开发的 H5 外卖程序"
+        },
+        {
+          id: 3,
+          title: "个人项目开发看板",
+          link: "http://project.lazy-minus-your-intelligence.com",
+          content: "个人项目开发进度和灵感记录看板，以及网站后续发展开发规划"
+        },
+        { id: 4, title: "重构火车APP", link: "", content: "React Hooks!" },
+        {
+          id: 5,
+          title: "Vue TS 搭建自己的组件库",
+          link: "",
+          content: "没有自己组件库的程序员是不完整的~【手工狗头】"
+        },
+        {
+          id: 6,
+          title: "个人网站小程序版本",
+          link: "",
+          content: "移动端的程序员 hack"
+        },
+        {
+          id: 7,
+          title: "TS 重写 Axios",
+          link: "https://github.com/Alfred-Lau/ts-axios",
+          content: "此处是个轮子"
+        },
+        {
+          id: 8,
+          title: "vue-mooker",
+          link: "https://github.com/Alfred-Lau/vue-mocker-testcase",
+          content: 'Vue 的 mock 插件，"我"还能做的更多！'
+        },
+        {
+          id: 9,
+          title: "模板引擎",
+          link: "https://github.com/Alfred-Lau/fast-template-engine",
+          content: "基于 es6 字符串实现模板引擎"
+        },
+        {
+          id: 10,
+          title: "mirror",
+          link: "https://github.com/Alfred-Lau/mirror",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        },
+        {
+          id: 11,
+          title: "TianGong",
+          link: "https://github.com/Alfred-Lau/fast-template-engine",
+          content: "个人效率神器，Electron"
+        },
+        {
+          id: 12,
+          title: "TianGong",
+          link: "https://github.com/Alfred-Lau/fast-template-engine",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        },
+        {
+          id: 13,
+          title: "@cli/core",
+          link: "https://github.com/Alfred-Lau/cli_core_codebase",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        },
+        {
+          id: 14,
+          title: "Vscode emmet 定制扩展",
+          link: "https://github.com/Alfred-Lau/fast-template-engine",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        },
+        {
+          id: 15,
+          title: "个人网站Flutter版本",
+          link: "",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        }
       ],
       view: "x-a",
       show: false,
@@ -255,7 +316,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../common/index.scss';
+@import "../common/index.scss";
 
 .home {
   background: var(--bgcolor);
@@ -283,26 +344,23 @@ export default {
       }
     }
 
-    .hot-spot{
-      .read-it-later{
-
+    .hot-spot {
+      .read-it-later {
       }
 
-      .read-it-later-content{
-
-        li{
+      .read-it-later-content {
+        li {
           position: relative;
           margin: 8px 0;
           padding: 6px 0;
         }
 
-        .read-content{
+        .read-content {
           display: flex;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          .read-main{
-
+          .read-main {
           }
         }
       }
@@ -391,7 +449,7 @@ export default {
         margin-bottom: 20px;
         padding: 15px;
         text-align: left;
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
         .card {
@@ -506,14 +564,13 @@ export default {
                 opacity: 0;
                 height: 0;
                 width: 0;
-                font-size:12px;
-                background:#110;
-                border-radius:6px;
-                color:#fff;
+                font-size: 12px;
+                background: #110;
+                border-radius: 6px;
+                color: #fff;
                 transition: all 0.6s;
               }
               a {
-
                 .wrapper img {
                   width: 100%;
                 }
@@ -526,7 +583,7 @@ export default {
                   font-size: 14px;
                   padding-bottom: 10px;
                   color: darkgreen;
-                  background: rgba(90,90,190, 0.6);
+                  background: rgba(90, 90, 190, 0.6);
                 }
                 .wrapper span {
                   font-size: 12px;
@@ -536,20 +593,20 @@ export default {
                 }
               }
 
-              &:hover{
+              &:hover {
                 .show-detail-modal {
                   position: absolute;
-                  top:0;
+                  top: 0;
                   left: 0;
                   display: block;
-                  opacity: .8;
+                  opacity: 0.8;
                   height: 100%;
                   width: 100%;
                   background: #d9d9d9;
-                  font-size:12px;
-                  background:#110;
-                  border-radius:6px;
-                  color:#fff;
+                  font-size: 12px;
+                  background: #110;
+                  border-radius: 6px;
+                  color: #fff;
                 }
               }
             }
@@ -561,7 +618,7 @@ export default {
 }
 </style>
 
-<docs >
+<docs>
 
 nothing happend just now！！！
 </docs>
