@@ -370,7 +370,7 @@ export default {
 
   .main {
     flex: 1;
-    background: #f0f2f5;
+    background: var(--bgcolor);
     overflow: hidden;
     &-container {
       margin: 10px 0 10px 0;
