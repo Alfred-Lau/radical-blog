@@ -189,7 +189,7 @@ export default {
         {
           id: 5,
           title: "Vue TS 搭建自己的组件库",
-          link: "",
+          link: "http://magic.lazy-minus-your-intelligence.com/",
           content: "没有自己组件库的程序员是不完整的~【手工狗头】"
         },
         {
@@ -224,25 +224,25 @@ export default {
         },
         {
           id: 11,
-          title: "TianGong",
-          link: "https://github.com/Alfred-Lau/fast-template-engine",
-          content: "个人效率神器，Electron"
+          title: "天工",
+          link: "https://github.com/Alfred-Lau/TianGong",
+          content: "个人效率神器，Electron，套路大全"
         },
         {
           id: 12,
-          title: "TianGong",
-          link: "https://github.com/Alfred-Lau/fast-template-engine",
-          content: "@cli/core的缘起之作，只支持命令行有限操作"
-        },
-        {
-          id: 13,
           title: "@cli/core",
           link: "https://github.com/Alfred-Lau/cli_core_codebase",
           content: "@cli/core的缘起之作，只支持命令行有限操作"
         },
         {
-          id: 14,
+          id: 13,
           title: "Vscode emmet 定制扩展",
+          link: "https://github.com/Alfred-Lau/emmit",
+          content: "@cli/core的缘起之作，只支持命令行有限操作"
+        },
+        {
+          id: 14,
+          title: "天工",
           link: "https://github.com/Alfred-Lau/fast-template-engine",
           content: "@cli/core的缘起之作，只支持命令行有限操作"
         },

@@ -11,6 +11,9 @@
       <li class="menu-item">
         <span><router-link to="/about">关于我</router-link></span>
       </li>
+      <!-- <li class="menu-item">
+        <span><router-link to="/redirect">关于我</router-link></span>
+      </li> -->
     </ul>
   </div>
 </template>

@@ -1,15 +1,15 @@
-import Vue from 'vue';
-import App from './App.vue';
-import './registerServiceWorker';
-import router from './router';
-import store from './store';
-import api from './api';
+import Vue from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import store from "./store";
+import api from "./api";
 
-import log from '@/scripts/plugin';
-import './common/index.scss';
+import log from "@/scripts/plugin";
+import "./common/index.scss";
 
 Vue.use(log, {
-  name: 'welcome'
+  name: "welcome"
 });
 
 Vue.config.productionTip = false;
@@ -20,4 +20,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app');
+}).$mount("#app");
