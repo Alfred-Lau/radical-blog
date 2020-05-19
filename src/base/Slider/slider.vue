@@ -3,7 +3,11 @@
     <div class="swiper-box">
       <swiper :options="swiperOptions">
         <swiper-slide v-for="item in swiperData" :key="item.id">
-          <a href=""><img :src="`/imgs/3.webp`" alt=""/></a>
+          <a href=""
+            ><img
+              src="https://lazy-minus-your-intelligence.oss-cn-qingdao.aliyuncs.com/blog/bgimgs/3.webp"
+              alt=""
+          /></a>
         </swiper-slide>
         <!-- 如果需要导航按钮 -->
         <div class="swiper-button-prev" slot="button-prev"></div>

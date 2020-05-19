@@ -56,7 +56,8 @@ export default {
     height: 480px;
     width: 720px;
     margin: 0 auto;
-    background: url("/imgs/welcome.png") no-repeat;
+    background: url("https://lazy-minus-your-intelligence.oss-cn-qingdao.aliyuncs.com/blog/bgimgs/welcome.png")
+      no-repeat;
     background-size: 720px auto;
     .btn {
       position: absolute;
