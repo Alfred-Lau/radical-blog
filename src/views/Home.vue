@@ -99,6 +99,13 @@
         </section>
       </div>
     </section>
+    <transition name="slide-fade">
+      <welcome
+        v-if="showWelcome"
+        @stay="stay"
+        @goToNewSite="goToNewSite"
+      ></welcome
+    ></transition>
   </div>
 </template>
 
@@ -107,6 +114,7 @@
 import { log } from "@/scripts/mixin";
 import Slider from "@/base/Slider/slider";
 import Calendar from "@/components/Calendar/calendar";
+import Welcome from "@/components/Welcome/welcome";
 import moment from "moment";
 
 // 这是一种 cjs 方式兼容 脚本方式的用法！
@@ -118,7 +126,8 @@ export default {
   name: "Home",
   components: {
     Calendar,
-    Slider
+    Slider,
+    Welcome
     /* You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build. */
     // 'x-b': { render: h => { return h('div', {}, 'b') } }
     // 'x-a': (h) => h(<div>comp A</div>),
@@ -133,6 +142,7 @@ export default {
   // 数据
   data() {
     return {
+      showWelcome: true,
       reads: [],
       originals: [
         {
@@ -264,6 +274,13 @@ export default {
 
   // 行为
   methods: {
+    stay() {
+      this.showWelcome = false;
+    },
+    goToNewSite() {
+      this.showWelcome = false;
+      window.location.href = "http://new.lazy-minus-your-intelligence.com/";
+    },
     handleDay(data) {
       const { year, month, week, day } = data;
       const msg = `you clicked ${year} 年${month}月 ${day}日，是第 ${week} 周.`;
@@ -323,6 +340,19 @@ export default {
   display: flex;
   flex-direction: row;
   height: 100%;
+
+  /* 可以设置不同的进入和离开动画 */
+  /* 设置持续时间和动画函数 */
+  .slide-fade-enter-active {
+    transition: all 0.3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .slide-fade-enter,
+  .slide-fade-leave-to {
+    opacity: 0;
+  }
 
   .left {
     width: 300px;
