@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const LogWebpackPlugin = require('./plugins/LogWebpackPlugin');
+const LogWebpackPlugin = require("./plugins/LogWebpackPlugin");
+const DeployWebpackPlugin = require("./plugins/DeployWebpackPlugin");
 
 module.exports = {
   pwa: {
@@ -12,8 +13,12 @@ module.exports = {
     }
   },
   configureWebpack(api) {
+    api.plugins.push(new LogWebpackPlugin({}));
+
     api.plugins.push(
-      new LogWebpackPlugin({
+      new DeployWebpackPlugin({
+        publicPath: "path to deploy",
+        replace: true
       })
     );
   },
@@ -24,10 +29,9 @@ module.exports = {
     });
 
     api.module
-      .rule('docs')
+      .rule("docs")
       .resourceQuery(/blockType=docs/)
-      .use('docs')
-      .loader(require.resolve('./loaders/docs-loader.js'));
+      .use("docs")
+      .loader(require.resolve("./loaders/docs-loader.js"));
   }
-
 };
