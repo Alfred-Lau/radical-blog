@@ -279,7 +279,7 @@ export default {
     },
     goToNewSite() {
       this.showWelcome = false;
-      window.location.href = "http://new.lazy-minus-your-intelligence.com/";
+      window.location.href = "http://lazy-minus-your-intelligence.com/";
     },
     handleDay(data) {
       const { year, month, week, day } = data;
