@@ -11,7 +11,7 @@
       </a>
       <p class="intro">
         现居杭州。喜欢知其然，更爱知其所以然，对工程化有较多实践，平时喜欢写一些<a
-          href="http://lazy-minus-your-intelligence.com/"
+          href="https://lazy-minus-your-intelligence.com/"
           >博客</a
         >和<a href="https://github.com/Alfred-Lau" target="_blank">开源项目</a
         >，开卷有益，来者不拒。
