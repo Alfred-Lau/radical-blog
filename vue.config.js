@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const LogWebpackPlugin = require("./plugins/LogWebpackPlugin");
 const DeployWebpackPlugin = require("./plugins/DeployWebpackPlugin");
-
+const ZipPlugin = require("./plugins/ZipPlugin");
 module.exports = {
   pwa: {
     iconPaths: {
@@ -19,7 +19,9 @@ module.exports = {
       new DeployWebpackPlugin({
         publicPath: "path to deploy",
         replace: true
-      })
+      }),
+      process.env.NODE_ENV === "production" &&
+        new ZipPlugin({ filename: "aliyun" })
     );
   },
   chainWebpack(api) {

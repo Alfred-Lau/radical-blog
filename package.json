@@ -45,12 +45,14 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
+    "jszip": "^3.4.0",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.12.0",
     "page-skeleton-webpack-plugin": "^0.10.12",
     "sass-loader": "^8.0.2",
     "typescript": "~3.7.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-sources": "^1.4.3"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
